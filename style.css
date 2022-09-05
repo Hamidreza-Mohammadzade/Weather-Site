@@ -1,0 +1,280 @@
+
+html , body{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+    padding: 5px;
+
+    overflow-x: hidden;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: Jaldi;
+
+    background-color: white;     /****************** change in JS **************/
+    color: black;                          /****************** change in JS **************/
+
+    background-image: url(BG/day.jfif);
+    background-size: cover;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+ul{
+    color: #30336b;
+}
+
+p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* =======================================================================Header===================================================== */
+.Header{
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    padding-right: 60px;
+}
+
+.Header-Item{
+    width: 100%;
+    height: 40px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.Location{
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+}
+
+/* ------------------ */
+
+
+.Country{
+    width: fit-content;
+    display: none;
+    flex-direction: row;
+    align-items: flex-start;
+    column-gap: 45px;
+
+    /* visibility: hidden; */
+    opacity: 0;
+    transition: opacity 200ms;
+
+    background-color: #dcdde173;
+
+    border: 0;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 30px;
+}
+
+.Select{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 5px;
+    color: black;      /****************** change in JS **************/
+}
+
+.Select:hover + .Country{
+    display: flex;
+    /* visibility: visible; */
+    opacity: 1;
+}
+
+.Country:hover{
+    display: flex;
+    opacity: 1;
+}
+
+.Submenu{
+    opacity: 0;
+    transition: opacity 150ms;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 7px;
+
+    border: 0;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+
+    /* box-sizing: border-box; */
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.Submenu li{
+    color: #130f40;
+    list-style-type: disc;
+}
+
+.Submenu a{
+    color: #30336b;
+}
+
+.menu-001 , .menu-002 , .menu-003 , .menu-004 , .menu-005 , .menu-006 , .menu-007{
+    color: black;         /****************** change in JS **************/
+}
+
+.menu-001:hover + .sub-001 , .menu-002:hover + .sub-002 , .menu-003:hover + .sub-003
+ , .menu-004:hover + .sub-004 , .menu-005:hover + .sub-005 , .menu-006:hover + .sub-006 , .menu-007:hover + .sub-007{
+    opacity: 1;
+}
+
+.sub-001:hover , .sub-002:hover , .sub-003:hover , .sub-004:hover , .sub-005:hover , .sub-006:hover , .sub-007:hover{
+    opacity: 1;
+}
+
+/* ============================================================Show Weather=============================================== */
+.Show-Detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+
+    margin-top: 7rem;
+}
+
+.Item-Show{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 0;
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);         /****************** change in JS **************/
+    /* backdrop-filter: blur(5px); */
+    /* -webkit-backdrop-filter: blur(5px); */
+    /* background-color: rgba(255, 255, 255, 0.233); */
+    box-sizing: border-box;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.Text{
+    font-size: 15px;
+    text-align: center;
+}
+
+.Temperature{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.Temp-C{
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: bolder;
+}
+
+.Wind-Detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0;
+    width: 100%;
+}
+
+.Wind-Speed , .Wind-Deg , .Humidity{
+    display: flex;
+    align-items: center;
+    width: 35%;
+    justify-content: space-between;
+    font-size: 17px;
+}
+/* ================================================================Footer===================================================== */
+footer{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.Last-Update , .More-Detail{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.Last-Update{
+    box-sizing: border-box;
+    padding: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(0, 0, 0);       /****************** change in JS **************/
+}
+
+.More-Detail{
+    column-gap: 40px;
+}
+
+.More-Detail p , .Last-Update p{
+    margin: 0;
+}
+
+.Precip , .UV{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+
+    box-sizing: border-box;
+    padding-left: 8px;
+    padding-right: 8px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(0, 0, 0);        /****************** change in JS **************/
+}
+
+
+/* =================================================font========================================== */
+@font-face{
+    font-family: 'Jaldi';
+    src: url(Font/Jaldi.ttf);
+}
