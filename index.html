@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Website</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="fontawesome/css/all.css" rel="stylesheet">
+</head>
+<body id="Body" onload="SelectCity('Tehran')">
+    <header class="Header">
+        <div class="Header-Item">
+            <div class="Menu">
+                <ul class="MainMenu">
+                    <li style="list-style-type: none;">
+                        <a class="Select" id="Select" href="#">
+                            <i class="fa-solid fa-caret-down"></i>
+                            <p style="margin: 3px;">Select Country</p>
+                        </a>
+                
+                        <ul class="Country">
+                            <li>
+                                <a class="menu-001" href="#">Canada</a>
+                                <ul class="Submenu sub-001">
+                                    <li><a onclick="SelectCity('Calgary')">Calgary</a></li>
+                                    <li><a onclick="SelectCity('Edmonton')">Edmonton</a></li>
+                                    <li><a onclick="SelectCity('Mississauga')">Mississauga</a></li>
+                                    <li><a onclick="SelectCity('Montreal')">Montreal</a></li>
+                                    <li><a onclick="SelectCity('Ottawa')">Ottawa</a></li>
+                                    <li><a onclick="SelectCity('Toronto')">Toronto</a></li>
+                                    <li><a onclick="SelectCity('Vancouver')">Vancouver</a></li>
+                                    <li><a onclick="SelectCity('Winnipeg')">Winnipeg</a></li>
+                                </ul> 
+                            </li>
+
+                            <li>
+                                <a class="menu-002" href="#">China</a>
+                                <ul class="Submenu sub-002">
+                                    <li><a onclick="SelectCity('Beijing')">Beijing </a></li>
+                                    <li><a onclick="SelectCity('Chengdu')">Chengdu </a></li>
+                                    <li><a onclick="SelectCity('Chongqing')">Chongqing </a></li>
+                                    <li><a onclick="SelectCity('Dongguan')">Dongguan </a></li>
+                                    <li><a onclick="SelectCity('Guangzhou')">Guangzhou </a></li>
+                                    <li><a onclick="SelectCity('Shanghai')">Shanghai</a></li>
+                                    <li><a onclick="SelectCity('Shenzhen')">Shenzhen</a></li>
+                                    <li><a onclick="SelectCity('Tianjin')">Tianjin</a></li>
+                                </ul>                               
+                            </li>
+
+                            <li>
+                                <a class="menu-003" href="#">Germany</a>
+                                <ul class="Submenu sub-003">
+                                    <li><a onclick="SelectCity('Berlin')">Berlin </a></li>
+                                    <li><a onclick="SelectCity('Cologne')">Cologne</a></li>
+                                    <li><a onclick="SelectCity('Frankfurt')">Frankfurt </a></li>
+                                    <li><a onclick="SelectCity('Hamburg')">Hamburg </a></li>
+                                    <li><a onclick="SelectCity('Munich')">Munich</a></li>
+                                </ul>                                
+                            </li>
+
+                            <li>
+                                <a class="menu-004" href="#">Iran</a>
+                                <ul class="Submenu sub-004">
+                                    <li><a onclick="SelectCity('Isfahan')">Isfahan</a></li>
+                                    <li><a onclick="SelectCity('Karaj')">Karaj</a></li>
+                                    <li><a onclick="SelectCity('Mashhad')">Mashhad</a></li>
+                                    <li><a onclick="SelectCity('Shiraz')">Shiraz </a></li>
+                                    <li><a onclick="SelectCity('Tehran')">Tehran</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a class="menu-005" href="#">Italy</a>
+                                <ul class="Submenu sub-005">
+                                    <li><a onclick="SelectCity('Florence')">Florence</a></li>
+                                    <li><a onclick="SelectCity('Milan')">Milan</a></li>
+                                    <li><a onclick="SelectCity('Naples')">Naples</a></li>
+                                    <li><a onclick="SelectCity('Rome')">Rome</a></li>
+                                    <li><a onclick="SelectCity('Venice')">Venice</a></li>
+                                </ul>                               
+                            </li>
+
+                            <li>
+                                <a class="menu-006" href="#">Japan</a>
+                                <ul class="Submenu sub-006">
+                                    <li><a onclick="SelectCity('Fukuoka')">Fukuoka</a></li>
+                                    <li><a onclick="SelectCity('Kobe')">Kobe</a></li>
+                                    <li><a onclick="SelectCity('Kyoto')">Kyoto</a></li>
+                                    <li><a onclick="SelectCity('Nagoya')">Nagoya</a></li>
+                                    <li><a onclick="SelectCity('Osaka')">Osaka</a></li>
+                                    <li><a onclick="SelectCity('Sapporo')">Sapporo</a></li>
+                                    <li><a onclick="SelectCity('Tokyo')">Tokyo</a></li>
+                                    <li><a onclick="SelectCity('Yokohama')">Yokohama</a></li>
+                                </ul>                              
+                            </li>
+
+                            <li>
+                                <a class="menu-007" href="#">Russia</a>
+                                <ul class="Submenu sub-007">
+                                    <li><a onclick="SelectCity('Chelyabinsk')">Chelyabinsk</a></li>
+                                    <li><a onclick="SelectCity('Kazan')">Kazan</a></li>
+                                    <li><a onclick="SelectCity('Moscow')">Moscow</a></li>
+                                    <li><a onclick="SelectCity('Novosibirsk')">Novosibirsk</a></li>
+                                    <li><a onclick="SelectCity('Omsk')">Omsk</a></li>
+                                    <li><a onclick="SelectCity('Yekaterinburg')">Yekaterinburg</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="Show-Detail">
+        <div class="Item-Show" id="Item-Show">
+            <div class="Location">
+                <i class="fa-solid fa-location-dot"></i>
+                <p class="CountryName" id="CountryName">Connecting</p>
+                <p>/</p>
+                <p class="Region" id="Region">...</p>
+            </div>
+            
+            <div class="Icon">
+                <img id="icon">
+            </div>
+            <p class="Text" id="Text">...</p>
+            <div class="Temperature">
+                <p class="Temp-C" id="Temp-C">0</p>
+                <i class="fa-regular fa-circle" style="margin-top: 12px;"></i>
+            </div>
+            <div class="Wind-Detail">
+                <div class="Wind-Speed">
+                    <i class="fa-solid fa-wind"></i>
+                    <div style="display: flex; flex-direction: row; align-items: center; column-gap: 4px;">
+                        <p class="Speed" id="Speed">...</p>
+                        <p>kph</p>
+                    </div>
+                </div>
+    
+                <div class="Wind-Deg">
+                    <i class="fa-regular fa-compass"></i>
+                    <div style="display: flex; flex-direction: row; align-items: center; column-gap: 4px;">
+                        <p class="Degree" id="Degree">...</p>
+                        <p>degree</p>
+                    </div>
+                </div>
+            </div>
+            <div class="Humidity">
+                <i class="fa-solid fa-droplet"></i>
+                <div style="display: flex; flex-direction: row; align-items: center; column-gap: 4px;">
+                    <p class="Humidity-Value" id="Humidity-Value">...</p>
+                    <p>%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="Last-Update" id="Last-Update">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <p class="Update-Time" id="Update-Time">...</p>
+        </div>
+
+        <div class="More-Detail">
+            <div class="Precip" id="BoxShadowMore">
+                <i class="fa-solid fa-ruler"></i>
+                <p>Rainfall amount(mm):</p>
+                <p class="Rain-Amount" id="Rain-Amount" style="font-size: 20px; font-weight: bold;">...</p>
+            </div>
+
+            <div class="UV" id="BoxShadowMore">
+                <i class="fa-solid fa-sun"></i>
+                <p>UV index:</p>
+                <p class="Uv-Index" id="Uv-Index" style="font-size: 20px; font-weight: bold;">...</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="index.js"></script>
+</html>
